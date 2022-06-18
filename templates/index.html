@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+</head>
+<body>
+    <form action="{{url_for('predict')}}" method="post">
+        <input type="text" name="Pclass" placeholder="Pclass">
+        <input type="text" name="Age" placeholder="Age">
+        <input type="text" name="SibSp" placeholder="SibSp">
+        <input type="text" name="Parch" placeholder="Parch">
+        <input type="text" name="Fare" placeholder="Fare">
+        <input type="text" name="Sex_n" placeholder="Sex_n">
+        <input type="text" name="Embarked_n" placeholder="Embarked_n">
+        <input type="submit">
+    </form>
+    <br><br>
+    {% if data==0 %}
+    <h1>Died</h1>
+    {%else%}
+    <h1>Survived</h1>
+    {%endif%}
+    {{ data }}
+
+</body>
+</html>
